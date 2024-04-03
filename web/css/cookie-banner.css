@@ -1,0 +1,61 @@
+.cookie-banner {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: -webkit-transform .3s 1s;
+    transition: -webkit-transform .3s 1s;
+    -o-transition: transform .3s 1s;
+    will-change: transform,opacity;
+    transition: transform .3s 1s;
+    transition: transform .3s 1s,-webkit-transform .3s 1s;
+   width: 20vw; 
+
+    right: 5vw;
+    padding: 24px 32px 32px;
+    -webkit-box-shadow: 0 16px 32px 0 rgb(31 34 41 / 8%);
+    box-shadow: 0 16px 32px 0 rgb(31 34 41 / 8%);
+    border: 1px solid #c4c7cc;
+    border-radius: 6px;
+    position: fixed;
+    bottom: 40px;
+    background-color: #adcdf1;
+    color: darkblue;
+    z-index: 71;
+    display: block;
+}
+
+ 
+/*Стили только для смартфонов*/
+
+@media (min-width: 400px) and (max-width: 599.99px) {
+.cookie-banner {
+   width: 80vw !important; 
+}
+
+
+}
+
+
+
+
+
+.cookie-banner .popup-cookies_title {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 1.33;
+    margin-bottom: 1.1vw;
+    color: darkblue;
+}
+
+.cookie-banner .popup-cookies_subtitle {
+    line-height: 1.43;
+    font-size: 13px;
+    margin-bottom: 2.2vw;
+    color: darkblue;
+}
+
+.cookie-banner .popup-cookies_subtitle > a {
+	color: darkblue;
+	text-decoration: underline;
+}

@@ -1,0 +1,219 @@
+/* Базовый контейнер табов */
+.t1 {
+background: url('/img/qiwi/bank.png') no-repeat left !important;
+padding-left:45px !important;
+}
+
+@media (min-width: 400px) and (max-width: 599.99px) {.t1{width:100% !important;}}
+
+
+
+.t2 {
+background: url('/img/vtb_ico2.png') no-repeat left !important;
+padding-left:45px !important;
+@media screen and (min-width: 320px) and (max-width: 600px) {width:100% !important;}
+}
+
+@media (min-width: 400px) and (max-width: 599.99px) {.t2{width:100% !important;}}
+
+
+.t3 {
+background: url('/img/qiwi/terminal.png') no-repeat left !important;
+padding-left:45px !important;
+@media screen and (min-width: 320px) and (max-width: 600px) {width:100% !important;}
+}
+
+@media (min-width: 400px) and (max-width: 599.99px) {.t3{width:100% !important;}}
+
+
+.t4 {
+background: url('/img/qiwi/qiwi.png') no-repeat left !important;
+padding-left:45px !important;
+@media screen and (min-width: 320px) and (max-width: 600px) {width:100% !important;}
+}
+
+@media (min-width: 400px) and (max-width: 599.99px) {.t4{width:100% !important;}}
+
+
+.t5 {
+background: url('/img/card_ico2.png') no-repeat left !important;
+padding-left:47px !important;
+@media screen and (min-width: 320px) and (max-width: 600px) {width:100% !important;}
+}
+
+
+@media (min-width: 400px) and (max-width: 599.99px) {.t5{width:100% !important;}}
+
+
+
+
+
+
+
+
+.tabs {
+	min-width: 320px;
+	/* max-width: 800px; */
+	max-width: 100%;
+	padding: 0px;
+	margin: 0 auto;
+}
+
+
+
+
+/* Стили секций с содержанием */
+.tabs>section {
+	display: none;
+	padding: 15px;
+	/* background: #fff; */
+	/* background: #14416b; */
+	/* background: #0263A7; */
+	border: 1px solid #ddd;
+	/* border: 1px solid #14416b; */
+	/* прикрутим анимацию */
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+.tabs>section>div {
+	/* background-color: #0263A7; */
+}
+.tabs>section>p {
+	margin: 0 0 5px;
+	line-height: 1.5;
+	color: #383838;
+
+}
+/* Описываем анимацию свойства opacity */
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+/* Прячем чекбоксы */
+.tabs>input {
+	display: none;
+	position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.tabs>label {
+	display: inline-block;
+	margin: 0 0 -1px;
+	padding: 15px 25px;
+	font-weight: 600;
+	text-align: center;
+	color: #aaa;
+	border: 0px solid #ddd;
+	border-width: 1px 1px 0 1px;
+	/* background: #f1f1f1; */
+	background: #14416b;
+	border-radius: 3px 3px 0 0;
+}
+.tabs>a {
+	display: inline-block;
+	margin: 0 0 -1px;
+	padding: 15px 25px;
+	font-weight: 600;
+	text-align: center;
+	color: #aaa;
+	border: 0px solid #ddd;
+	border-width: 1px 1px 1px 1px;
+	/* background: #f1f1f1; */
+	background: #14416b;
+	border-radius: 3px 3px 0 0;
+}
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.tabs>label:before {
+	font-family: fontawesome;
+	font-weight: normal;
+	margin-right: 10px;
+}
+
+.tabs>label[for*="1"]:before {
+	/* content: "\f19a"; */
+	/* content: url('/img/qiwi/bank.png'); */
+}
+.tabs>label[for*="2"]:before {
+	/* content: "\f17a";*/
+	/* content: url('/img/qiwi/terminal.png'); */
+}
+.tabs>label[for*="3"]:before {
+	/* content: "\f13b"; */
+}
+.tabs>label[for*="4"]:before {
+	/* content: "\f13c"; */
+}
+.tabs>label[for*="5"]:before {
+	/* content: "\f13c"; */
+}
+
+/* Изменения стиля переключателей вкладок при наведении */
+
+.tabs>label:hover {
+	color: #888;
+	cursor: pointer;
+}
+.tabs>a:hover {
+	color: #888;
+	cursor: pointer;
+}
+/* Стили для активной вкладки */
+.tabs>input:checked+label {
+	/* color: #555; */
+	color: #fff;
+	/* border-top: 1px solid #009933; */
+	/* border-bottom: 1px solid #fff; */
+	/* border-bottom: 1px solid #0263A7; */
+	background: #0263A7;
+	/* background: #14416b; */
+	/* background: #fff; */
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3,
+#tab4:checked~#content-tab4, #tab5:checked~#content-tab5 {
+	display: block;
+}
+/* Убираем текст с переключателей
+* и оставляем иконки на малых экранах
+*/
+
+@media screen and (max-width: 680px) {
+
+/*
+	.tabs>label {
+		font-size: 0;
+	}
+*/
+
+	.tabs>label:before {
+		margin: 0;
+		font-size: 18px;
+	}
+}
+/* Изменяем внутренние отступы
+*  переключателей для малых экранов
+*/
+@media screen and (max-width: 400px) {
+	.tabs>label {
+		padding: 15px;
+	}
+}
+
+
+

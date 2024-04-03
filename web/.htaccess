@@ -1,0 +1,16 @@
+Order Deny,Allow
+
+DirectoryIndex index.php
+
+RewriteEngine on
+
+RewriteRule ^sitemap.xml$ /sitemap.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule ^apple*$ /appl.png [L]
+
+RewriteRule . index.php
+
+RewriteRule ^(events)/([-_a-z0-9]+)?(.html)?$ index.php?page=$1&id=$2 [L,QSA]
